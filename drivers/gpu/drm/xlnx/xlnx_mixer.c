@@ -3010,7 +3010,7 @@ static void xlnx_mix_init(struct xlnx_mix_hw *mixer)
 	u32 i;
 	u32 bg_bpc = mixer->bg_layer_bpc;
 	//u64 rgb_bg_clr = (0xFFFF >> (XVMIX_MAX_BPC - bg_bpc)) << (bg_bpc * 2);
-	u64 rgb_bg_clr = (0xFFFFFF);  // set to black
+	u64 rgb_bg_clr = (0x0);  // set to black
 	enum xlnx_mix_layer_id layer_id;
 	struct xlnx_mix_layer_data *layer_data;
 
