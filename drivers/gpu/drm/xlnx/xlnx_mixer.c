@@ -3009,7 +3009,8 @@ static void xlnx_mix_init(struct xlnx_mix_hw *mixer)
 {
 	u32 i;
 	u32 bg_bpc = mixer->bg_layer_bpc;
-	u64 rgb_bg_clr = (0xFFFF >> (XVMIX_MAX_BPC - bg_bpc)) << (bg_bpc * 2);
+	//u64 rgb_bg_clr = (0xFFFF >> (XVMIX_MAX_BPC - bg_bpc)) << (bg_bpc * 2);
+	u64 rgb_bg_clr = (0xFFFF);  // set to black
 	enum xlnx_mix_layer_id layer_id;
 	struct xlnx_mix_layer_data *layer_data;
 
@@ -3018,7 +3019,6 @@ static void xlnx_mix_init(struct xlnx_mix_hw *mixer)
 	xlnx_mix_set_active_area(mixer, layer_data->hw_config.max_width,
 				 layer_data->hw_config.max_height);
 	/* default to blue */
-	dsffd
 	xlnx_mix_set_bkg_col(mixer, rgb_bg_clr);
 
 	for (i = 0; i < mixer->layer_cnt; i++) {
