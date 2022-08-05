@@ -3018,6 +3018,7 @@ static void xlnx_mix_init(struct xlnx_mix_hw *mixer)
 	xlnx_mix_set_active_area(mixer, layer_data->hw_config.max_width,
 				 layer_data->hw_config.max_height);
 	/* default to blue */
+	dsffd
 	xlnx_mix_set_bkg_col(mixer, rgb_bg_clr);
 
 	for (i = 0; i < mixer->layer_cnt; i++) {
