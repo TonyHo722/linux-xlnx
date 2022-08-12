@@ -806,6 +806,7 @@ static int xvip_composite_probe(struct platform_device *pdev)
 {
 	struct xvip_composite_device *xdev;
 	int ret;
+	dev_info(&pdev->dev, "xvip_composite_probe enter!!\n");
 
 	xdev = devm_kzalloc(&pdev->dev, sizeof(*xdev), GFP_KERNEL);
 	if (!xdev)
@@ -851,6 +852,7 @@ static int xvip_composite_remove(struct platform_device *pdev)
 {
 	struct xvip_composite_device *xdev = platform_get_drvdata(pdev);
 
+	dev_info(&pdev->dev, "xvip_composite_remove enter!!\n");
 	mutex_destroy(&xdev->lock);
 	xvip_graph_cleanup(xdev);
 	xvip_composite_v4l2_cleanup(xdev);
